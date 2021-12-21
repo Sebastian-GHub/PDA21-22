@@ -6,7 +6,8 @@ public class ArrayMerger {
 		int[] array1 = { 1 , 3 , 3 , 5 , 6 , 9 };
 		int[] array2 = { 2 , 3 , 5 , 7 , 8 , 9 , 10 };
 		int[] result ;// merge array1 and array2
-		
+		//Test comment for github
+		int test = 1;
 		//Addiere die Länge der beiden Arrays und setzte result als Array mit der Länge dieser Summe
 		int arrayLength = array1.length + array2.length;
 		result = new int[arrayLength]; 
