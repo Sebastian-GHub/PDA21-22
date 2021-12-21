@@ -81,9 +81,9 @@ public class Star {
 			return true;
 		}else if(aMag<=10 && aMag>=5 && this.type.equals("Subdwarf")) {
 			return true;
-		}else if(aMag<5 && aMag>=0 && (this.type.equals("Main sequence") || this.type.equals("Subgiant"))) {
+		}else if(aMag<=5 && aMag>=0 && (this.type.equals("Main sequence") || this.type.equals("Subgiant"))) {
 			return true;
-		}else if(aMag<=5 && aMag>=-5 && (this.type.equals("Giant") || this.type.equals("Bright giant"))) {
+		}else if(aMag<=0 && aMag>=-5 && (this.type.equals("Giant") || this.type.equals("Bright giant"))) {
 			return true;
 		}else if(aMag<=-5 && aMag>=-10 && (this.type.equals("Blue supergiant") || this.type.equals("Yellow supergiant") || this.type.equals("Red supergiant") || this.type.equals("Hypergiant"))) {
 			return true;

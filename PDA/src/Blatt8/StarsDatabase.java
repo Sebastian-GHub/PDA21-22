@@ -21,6 +21,11 @@ public class StarsDatabase {
 	
 	public void add(Star star) {
 		Star[] newStarArr = new Star[this.starArr.length+1];
+		if(this.starArr.length!=0) {
+			for (int i=0; i<this.starArr.length; i++) {
+				newStarArr[i]=this.starArr[i];
+			}
+		}
 		newStarArr[starArr.length] = star;
 		this.starArr = newStarArr;
 	}
@@ -30,13 +35,14 @@ public class StarsDatabase {
 			System.out.println("There is no star for the given index.");
 		}else {
 			Star[] newStarArr = new Star[this.starArr.length-1];
-			for (int i = 0; i<this.starArr.length; i++) {
-				if (i>= index) {
+			for(int i = 0; i<this.starArr.length; i++){
+				if(i > index) {
 					newStarArr[i]=this.starArr[i+1];
-				}else {
+				}else if(i < index) {
 					newStarArr[i]=this.starArr[i];
 				}
 			}
+			this.starArr = newStarArr;
 		}
 	}
 	
