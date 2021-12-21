@@ -1,3 +1,5 @@
 package Großübung;
 
-public class Ball { }
+public class Ball { 
+	private int size = 3;
+}
