@@ -11,7 +11,8 @@ public class MatrixCalc {
 				{1,2},
 				{1,2}
 		};
-		printMatrix(multiplyMatrix(matrixA, matrixB));
+		double[][] matrixC = multiplyMatrix(matrixA, matrixB);
+		printMatrix(matrixC);
 	}
 	
 	public static double[][] multiplyMatrix(double[][] a, double[][] b) {
