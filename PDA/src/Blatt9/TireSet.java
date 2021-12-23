@@ -13,6 +13,13 @@ public class TireSet {
 		return this.tires.length;
 	}
 	
+	public Tire getTire(int index) {
+		if(index>=getAmount()) {
+			return null;
+		}
+		return this.tires[index];
+	}
+	
 	public void swapTire(int index, Tire other) {
 		if(duplicate(other)) {
 			int otherIndex = getIndex(other);
@@ -22,6 +29,15 @@ public class TireSet {
 		}else {
 			this.tires[index] = other;
 		}
+	}
+	
+	public boolean hasFlat() {
+		for(Tire s : this.tires) {
+			if(s.isFlat()) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	private boolean duplicate(Tire other) {
