@@ -9,9 +9,27 @@ public class SortedLinkedIntList {
 		if(start == null) {
 			start = elem;
 		}else {
-			/*TODO:
-			 * Adding elements at the right position so they do be sorted.
-			 */
+			if(start.getValue()>=value) {
+				elem.setNext(start);
+				start = elem;
+			}else {
+				LinkedIntListElement tmp = start;
+				LinkedIntListElement tmpPrevious = start;
+				boolean set = false;
+				while(tmp.getValue()<value) {
+					if(tmp.hasNext()) {
+						tmpPrevious = tmp;
+						tmp = tmp.getNext();
+					}else {
+						tmp.setNext(elem);
+						set = true;
+					}	
+				}
+				if(!set) {
+					elem.setNext(tmp);
+					tmpPrevious.setNext(elem);
+				}			
+			}
 		}
 	}
 	
@@ -30,16 +48,26 @@ public class SortedLinkedIntList {
 	}
 	
 	public int[] toArray() {
-		int size=0;
-		while(hasNext()) {
-			size++;
-			getNext();
-		}
+		int size = getSize();
 		int[] result = new int[size];
-		reset();
+		LinkedIntListElement arrElem = start;
 		for(int i=0; i<size;i++) {
-			result[i] = getNext();
+			result[i] = arrElem.getValue();
+			arrElem = arrElem.getNext();
 		}
 		return result;
+	}
+	
+	public int getSize() {
+		int size = 0;
+		if(start!=null) {
+			size++;
+		}
+		LinkedIntListElement sizeCounter = start;
+		while(sizeCounter.hasNext()) {
+			size++;
+			sizeCounter = sizeCounter.getNext();
+		}
+		return size;
 	}
 }
