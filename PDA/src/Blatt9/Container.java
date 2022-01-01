@@ -44,7 +44,7 @@ public class Container {
 	
 	/**
 	 * 
-	 * @param values pre-sorted array of Packages, first being the heaviest, last being the lightest.
+	 * @param values pre-sorted array of Packages sorted by weight, first being the heaviest, last being the lightest.
 	 */
 	public void addOpt(Package[] values) {
 		for(Package value : values) {
