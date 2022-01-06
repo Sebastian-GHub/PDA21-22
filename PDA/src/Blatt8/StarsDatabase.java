@@ -21,10 +21,10 @@ public class StarsDatabase {
 	
 	public void add(Star star) {
 		Star[] newStarArr = new Star[this.starArr.length+1];
-		if(this.starArr.length!=0) {
-			for (int i=0; i<this.starArr.length; i++) {
-				newStarArr[i]=this.starArr[i];
-			}
+		int index = 0;
+		for(Star s : starArr) {
+			newStarArr[index] = s;
+			index++;
 		}
 		newStarArr[starArr.length] = star;
 		this.starArr = newStarArr;
